@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:52:27 by pwolff            #+#    #+#              #
-#    Updated: 2024/01/27 11:27:26 by pwolff           ###   ########.fr        #
+#    Updated: 2024/02/02 08:03:24 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,8 +62,18 @@ ft_list += ["World!"]
 
 """
 del ft_tuple
-ft_tuple = ("hello", "France")
+ft_tuple = ("Hello", "France!")
 
+
+"""
+    les dictionnaires {"Cle" : "Valeur", "Cle2" : "Valeur2"}
+    Pour ajouter une paire clé-valeur à un dictionnaire, ajoutez juste une 
+    nouvelle clé dans le dictionnaire existant. Si la clé existe déjà, 
+    vous l’écraserez en définissant une valeur.
+"""
+
+# ft_dict = {"Hello" : "titi!"}
+ft_dict["Hello"] = "42Paris!"
 
 
 print(ft_list)
