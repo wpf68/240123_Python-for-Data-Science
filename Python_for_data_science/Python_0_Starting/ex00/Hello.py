@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:52:27 by pwolff            #+#    #+#              #
-#    Updated: 2024/02/02 08:03:24 by pwolff           ###   ########.fr        #
+#    Updated: 2024/02/02 08:10:33 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,14 @@ ft_tuple = ("Hello", "France!")
 """
 
 # ft_dict = {"Hello" : "titi!"}
+
 ft_dict["Hello"] = "42Paris!"
+
+
+
+
+
+
 
 
 print(ft_list)
