@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 10:52:27 by pwolff            #+#    #+#              #
-#    Updated: 2024/02/02 08:10:33 by pwolff           ###   ########.fr        #
+#    Updated: 2024/02/04 11:12:11 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,19 @@ ft_dict["Hello"] = "42Paris!"
 
 
 
+"""
+    Un ensemble (set) est un objet conteneur tres semblable aux listes sauf qu'il
+    ne peut contenir deux objets identiques.
+"""
+
+# ft_set = {"Hello", "tutu!"}
+
+
+
+ft_set.discard("Hello") # Pour mettre Hello au bon endroit
+ft_set.remove("tutu!")  # Leve une exception si non present
+ft_set.add("Paris!")
+ft_set.add("Hello")
 
 
 
