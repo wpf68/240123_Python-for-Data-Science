@@ -6,16 +6,18 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 07:58:50 by pwolff            #+#    #+#              #
-#    Updated: 2024/02/06 08:00:19 by pwolff           ###   ########.fr        #
+#    Updated: 2024/02/06 09:23:25 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 from NULL_not_found import NULL_not_found
+
 Nothing = None
 Garlic = float("NaN")
 Zero = 0
 Empty = ''
 Fake = False
+
 NULL_not_found(Nothing)
 NULL_not_found(Garlic)
 NULL_not_found(Zero)
