@@ -25,12 +25,14 @@ import sys
 
 
 def treatement(sentence):
-    """
-        Traitement de la String
-
-        Nombre de punctuations : strPunctuation
 
     """
+    This time you have to make a real autonomous program, with a main,
+    which takes a single string argument and displays the sums of its
+    upper-case characters, lower-case characters, punctuation characters,
+    digits and spaces.
+    """
+
     strPunctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
     nbUpperCase = sum(1 for value in sentence if value.isupper())
     nbLowerCase = sum(1 for value in sentence if value.islower())
@@ -60,11 +62,14 @@ def treatement(sentence):
 
 
 def main():
+
     """
-        Test nombre d'arguments
-    
-    
+        • If None or nothing is provided, the user is prompted to provide
+        a string.
+        • If more than one argument is provided to the program,
+        print an AssertionError.
     """
+
     tab = sys.argv
 
     try:
@@ -75,6 +80,7 @@ def main():
                 sentence = tab[1]
                 break
             sentence = input("Which sentence do you want to count ? \n")
+            sentence += "\n"
             if sentence:
                 break
 
