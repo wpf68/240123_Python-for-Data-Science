@@ -12,11 +12,11 @@
 
 """
 class ft_filter(object)
- |  filter(function or None, iterable) --> filter object
- |  
- |  Return an iterator yielding those items of iterable for which function(item)
- |  is true. If function is None, return the items that are true.
- |  
+ | filter(function or None, iterable) --> filter object
+ |
+ | Return an iterator yielding those items of iterable for which function(item)
+ | is true. If function is None, return the items that are true.
+ |
 
     Comment filter une liste sans utiliser filter ?
 
@@ -30,7 +30,11 @@ class ft_filter(object)
 
 """
 
+
 def ft_filter(ft_lambda, listIterable):
-    if ft_lambda:
-        return(value for value in listIterable if ft_lambda(value))
-    return(value for value in listIterable if value == True)
+    # if ft_lambda:
+    #     print("lambda")
+    #     return(value for value in listIterable if ft_lambda(value))
+    # print("No lambda !!!")
+    # return(value for value in listIterable if value == True)
+    return (value for value in listIterable if ft_lambda(value))
