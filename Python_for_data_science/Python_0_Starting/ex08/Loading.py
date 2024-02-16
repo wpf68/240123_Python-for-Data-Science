@@ -34,7 +34,7 @@ def formatTime(secound):
     return f"{int(m):02d}:{int(s):02d}"
 
 
-def ft_tqdm(listeRange):
+def ft_tqdm(listeRange: range) -> None:
     # timeInitial = time.time()
     i = len(listeRange) - 1
     for value in listeRange:
