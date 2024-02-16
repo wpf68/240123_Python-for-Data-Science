@@ -59,10 +59,10 @@ from Loading import ft_tqdm
 
 
 print("original tqdm / sleep(0.007)")
-for elem in tqdm(range(333)):
+for elem in tqdm(range(333), unit_scale=True):
     sleep(0.005)
 print()
 
 print("ft_tqdm / sleep(0.007)")
 for elem in ft_tqdm(range(333)):
-    sleep(0.01)
+    sleep(0.05)
