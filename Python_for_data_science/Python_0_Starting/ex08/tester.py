@@ -65,4 +65,4 @@ print()
 
 print("ft_tqdm / sleep(0.007)")
 for elem in ft_tqdm(range(333)):
-    sleep(0.05)
+    sleep(0.5)

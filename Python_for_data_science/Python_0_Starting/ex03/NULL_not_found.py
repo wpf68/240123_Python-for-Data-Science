@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/06 07:57:01 by pwolff            #+#    #+#              #
-#    Updated: 2024/02/06 10:04:08 by pwolff           ###   ########.fr        #
+#    Updated: 2024/02/16 10:41:16 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ def NULL_not_found(object: any) -> int:
 
     result = tab.get(object, "Type not Found")
     # print(f" ** Result = {result}")
-    typeObject = type(object)
+    # typeObject = type(object)
 
     if object == None:
         print(f"{result}: {object} {type(object)}")

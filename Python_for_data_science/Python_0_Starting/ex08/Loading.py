@@ -26,7 +26,7 @@ https://www.delftstack.com/fr/howto/python/python-countdown-timer/
 
 """
 
-import time
+# import time
 
 
 def formatTime(secound):
@@ -35,31 +35,29 @@ def formatTime(secound):
 
 
 def ft_tqdm(listeRange):
-    timeInitial = time.time()
-    # char = '█'
+    # timeInitial = time.time()
     i = len(listeRange) - 1
     for value in listeRange:
-        pourcentage = (100 / i * value)
-        timeActual = time.time() - timeInitial
-        speedLoop = value / timeActual
-        timeRest = ((i + 1) - value) / speedLoop
+        pourcentage = int(100 / i * value)
+        # timeActual = time.time() - timeInitial
+        # speedLoop = value / timeActual
+        # timeRest = ((i + 1) - value) / (speedLoop + .01)
 
-        # string = f"{'█' * int(pourcentage)}"
-        string = "|"
-        string += '█' * int(pourcentage)
+
+        string = "|" + '█' * int(pourcentage)
 
         
         string += ' ' * int(100 - pourcentage)
-        # s = (time.time() - tempsInitial)
-        # a = time.strftime("%H:%M:%S", s)
-        string += "|" + f" {value + 1}/{i + 1} [{time.strftime("%H:%M:%S", (time.ctime(time.time() - tempsInitial)))}]"
-        # string += "|" + f" {value + 1}/{i + 1} " + formatTime(timeActual) + "<" + formatTime(timeRest)
+        if len(str(value + 1)) < len(str(i + 1)):
+            nbZero = int(len(str(i + 1)) - len(str(value + 1)))
+            strValue = str(value + 1) + "." + "0" * nbZero
+        else:
+            strValue = str(value + 1)
+        string += "|" + f" {strValue}/{i + 1}" 
+        # string += "|" + f" {value + 1}/{i + 1}" 
 
-        # string += "|" + f" {value + 1}/{i + 1} [{a}]"
-        
-        # pourcentage = int(pourcentage)
+        # string += " " + formatTime(timeActual) + "<" + formatTime(timeRest) + " "
 
-        # print(f"\r{pourcentage:6.2f} % {string}", end=" : ", flush=True)
         print(f"\r{pourcentage:>3.0f}%{string}", end="", flush=True)
 
         yield
