@@ -32,8 +32,6 @@ from Loading import ft_tqdm
 #     print (value)
 # print(4 in lst)
 
-
-
 # print()
 # lst = (x * x for x in range(3))
 # print(type(lst))
@@ -55,14 +53,12 @@ from Loading import ft_tqdm
 # # print("Mon generateur 5 : ", next(monGenerateur)) # error
 
 
-
-
-
-print("original tqdm / sleep(0.007)")
-for elem in tqdm(range(333), unit_scale=True):
+print("ft_tqdm / sleep(0.005)")
+for elem in ft_tqdm(range(333)):
     sleep(0.005)
 print()
 
-print("ft_tqdm / sleep(0.007)")
-for elem in ft_tqdm(range(333)):
-    sleep(0.5)
+print("original tqdm / sleep(0.005)")
+for elem in tqdm(range(333), unit_scale=True):
+    sleep(0.005)
+print()
