@@ -12,4 +12,9 @@
 
 
 def count_in_list(list, search):
+    """
+        The count_in_list(list, string) method returns the number
+        of times the specified element appears in the list.',
+    """
     return list.count(search)
+

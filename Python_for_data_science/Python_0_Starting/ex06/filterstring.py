@@ -41,6 +41,11 @@ from ft_filter import ft_filter
 
 
 def main():
+    fontion = ft_filter.__doc__
+    origine = filter.__doc__
+
+    print(fontion == origine)
+
     try:
         if len(sys.argv) != 3:
             raise AssertionError("the arguments are bad")
