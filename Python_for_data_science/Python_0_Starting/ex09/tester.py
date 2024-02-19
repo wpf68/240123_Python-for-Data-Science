@@ -12,5 +12,5 @@
 
 from ft_package.package import count_in_list
 
-print(count_in_list(["toto", "tata", "toto"], "toto")) # output: 2
-print(count_in_list(["toto", "tata", "toto"], "tutu")) # output: 0
+print(count_in_list(["toto", "tata", "toto"], "toto"))
+print(count_in_list(["toto", "tata", "toto"], "tutu"))

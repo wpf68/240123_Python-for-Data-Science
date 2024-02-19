@@ -1,24 +1,26 @@
 # ****************************************************************************#
 #                                                                             #
 #                                                         :::      ::::::::   #
-#    package.py                                         :+:      :+:    :+:   #
+#    clear.py                                           :+:      :+:    :+:   #
 #                                                     +:+ +:+         +:+     #
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
-#    Created: 2024/02/17 08:10:53 by pwolff            #+#    #+#             #
-#    Updated: 2024/02/17 08:10:53 by pwolff           ###   ########.fr       #
+#    Created: 2024/02/19 08:14:13 by pwolff            #+#    #+#             #
+#    Updated: 2024/02/19 08:14:13 by pwolff           ###   ########.fr       #
 #                                                                             #
 # ****************************************************************************#
 
-# pip install flak8
-# alias norminette=flake8
+import os
 
-# Chemin pour flack8 :
-# export PATH=$PATH:/home/pwolff/.local/bin
 
-def count_in_list(list, search):
-    """
-        The count_in_list(list, string) method returns the number
-        of times the specified element appears in the list.',
-    """
-    return list.count(search)
+def uninstall():
+    os.system("rm -rf build")
+    os.system("rm -rf dist")
+    os.system("rm -rf ft_package.egg-info")
+    os.system("rm -rf ft_package/__pycache__")
+    os.system("pip3 uninstall ft_package")
+    os.system("rm -rf env")
+
+
+if __name__ == "__main__":
+    uninstall()

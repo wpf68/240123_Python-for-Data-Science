@@ -25,3 +25,30 @@ pip3 show -v ft_package
 
 pip install --force-reinstall  ./dist/ft_package-0.0.1-py3-none-any.whl
 
+
+
+***********************************************************************
+
+                        Start to peer-evaluation
+
+***********************************************************************
+python3 -m venv env
+source env/bin/activate
+
+pyton3 start.py
+pip3 show -v ft_package
+
+
+exit
+python3 clear.py
+***********************************************************************
+
+
+
+
+
+
+
+config setuptools :
+https://setuptools.pypa.io/en/latest/userguide/
+
