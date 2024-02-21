@@ -18,6 +18,11 @@
     python3
     import building
     help(building)
+
+    Expected outputs: (the carriage return counts as a space, if you don’t
+    want to return one use ctrl + D)
+https://stackoverflow.com/questions/15666923/sys-stdin-does-not-close-on-ctrl-d
+
 """
 
 import sys
@@ -71,18 +76,19 @@ def main():
     """
 
     tab = sys.argv
-
+    sentence = ""
     try:
         if len(tab) > 2:
             raise AssertionError("Error too many arguments !!!")
-        while True:
-            if len(tab) == 2:
-                sentence = tab[1]
-                break
-            sentence = input("Which sentence do you want to count ? \n")
-            sentence += "\n"
-            if sentence:
-                break
+        elif len(tab) == 2:
+            sentence = tab[1]
+        else:
+            print("What is the text to count?")
+            while True:
+                line = sys.stdin.readline()
+                if line == "":
+                    break
+                sentence += line
 
     except AssertionError as error:
         print(AssertionError.__name__+": ", error)
