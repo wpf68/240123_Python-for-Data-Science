@@ -1,4 +1,18 @@
 
+*********************************************************************
+*********************************************************************
+
+Pour flak8
+racine .zshrc
+rajouter avec vim : export PATH=$PATH:/home/pwolff/.local/bin
+
+source .zshrc     // voir a fermer reouvrir le terminal
+
+*********************************************************************
+*********************************************************************
+
+
+
 Creation d'un package :
 
 https://python.doctor/page-python-modules-package-module-cours-debutants-informatique-programmation
