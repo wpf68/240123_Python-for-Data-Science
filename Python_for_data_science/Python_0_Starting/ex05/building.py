@@ -11,7 +11,8 @@
 # ****************************************************************************#
 
 """
-    Chemin pour flack8 :
+    pip install flake8
+    Chemin pour flake8 :
     export PATH=$PATH:/home/pwolff/.local/bin
 
     lire la doc :
