@@ -13,6 +13,26 @@
 import numpy as np
 from PIL import Image
 
+
+"""
+python3 -m venv env
+source env/bin/activate
+pip install numpy
+pip install Pillow
+
+    lire la doc :
+    python3
+    import load_image
+    help(load_image)
+
+    from load_image import ft_load
+    help(ft_load)
+
+Chemin pour flack8 :
+export PATH=$PATH:/home/pwolff/.local/bin
+"""
+
+
 """
 Pillow est une bibliothèque de traitement d'image, qui est un fork
 et successeur du projet PIL (Python Imaging Library). Elle est conçue de
@@ -31,6 +51,12 @@ def ft_load(path: str) -> np.ndarray:
     and its pixels content in RGB format.
     You have to handle, at least, JPG and JPEG format.
     You need to handle any error with a clear error message
+
+    Parameters:
+    path (str): The path to the image file to be loaded.
+
+    Returns:
+    np.ndarray: A NumPy array representing the loaded image.
     """
 
     try:
@@ -39,7 +65,6 @@ def ft_load(path: str) -> np.ndarray:
     except AssertionError as error:
         print(f"\033[1;31m{AssertionError.__name__} : {error} \033[1;37m")
         return 0
-    
 
     try:
         test = Image.open(path)
@@ -50,8 +75,6 @@ def ft_load(path: str) -> np.ndarray:
     except Exception:
         print(f"\033[1;31m{Exception.__name__} : File no present\033[1;37m")
         return 0
-
-
 
 
 def main():
