@@ -64,7 +64,7 @@ def ft_load(path: str) -> np.ndarray:
             raise AssertionError("Only JPG and JPEG formats are supported.")
     except AssertionError as error:
         print(f"\033[1;31m{AssertionError.__name__} : {error} \033[1;37m")
-        return 0
+        return np.array([])
 
     try:
         test = Image.open(path)
@@ -75,7 +75,7 @@ def ft_load(path: str) -> np.ndarray:
         return test
     except Exception:
         print(f"\033[1;31m{Exception.__name__} : File no present\033[1;37m")
-        return 0
+        return np.array([])
 
 
 def main():
