@@ -17,8 +17,12 @@ from PIL import Image
 """
 python3 -m venv env
 source env/bin/activate
+python3 start.py
+
+or :
 pip install numpy
 pip install Pillow
+pip install matplotlib
 
     lire la doc :
     python3
@@ -64,18 +68,18 @@ def ft_load(path: str) -> np.ndarray:
             raise AssertionError("Only JPG and JPEG formats are supported.")
     except AssertionError as error:
         print(f"\033[1;31m{AssertionError.__name__} : {error} \033[1;37m")
-        return np.array([])
+        return ""
 
     try:
         test = Image.open(path)
         # test.show()
         test = np.array(test)
-        
+
         print(f"\033[1;32mThe shape of image is: {test.shape}\033[1;37m")
         return test
     except Exception:
         print(f"\033[1;31m{Exception.__name__} : File no present\033[1;37m")
-        return np.array([])
+        return ""
 
 
 def main():

@@ -29,10 +29,11 @@ https://www.delftstack.com/fr/howto/matplotlib/
 matplotlib-display-image-in-grayscale/
 """
 
+
 def zoom():
     try:
-        image = (ft_load("animall.jpeg"))
-        if image == []:
+        image = (ft_load("animal.jpeg"))
+        if isinstance(image, str) and image == "":
             raise AssertionError("Error ft load_image !!!")
         else:
             print(image)
@@ -40,15 +41,14 @@ def zoom():
         print(f"\033[1;31m{AssertionError.__name__} : {error}\033[1;37m")
         exit()
 
-
     # image2 = image[100:500,450:850,0:3]
     # imageColor = Image.fromarray(image2)
     # imageColor.show()
     # print(imageColor.format, imageColor.size, imageColor.mode)
     # print(np.array(imageColor).shape)
 
-    imageColor = Image.fromarray(image)   
-    imageTemp = imageColor.crop((450,100,850,500))
+    imageColor = Image.fromarray(image)
+    imageTemp = imageColor.crop((450, 100, 850, 500))
     imageNB = imageTemp.convert("L")
     print(f"\033[1;32mNew shape after slicing\
 : {np.array(imageNB).shape}\033[1;37m")
@@ -62,8 +62,6 @@ def zoom():
     plt.title("Zoomed Image")
     plt.axis('on')
     plt.show()
-
-
 
 
 if __name__ == "__main__":
