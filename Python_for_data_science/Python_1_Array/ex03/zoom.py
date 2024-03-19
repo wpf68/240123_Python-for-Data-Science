@@ -63,6 +63,9 @@ def zoom():
     plt.axis('on')
     plt.show()
 
+    # ********** Save for next exercice ************
+    imageNB.save('ImageNB.jpeg', 'jpeg')
+
 
 if __name__ == "__main__":
     zoom()
