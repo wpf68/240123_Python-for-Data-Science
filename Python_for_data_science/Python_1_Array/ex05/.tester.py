@@ -16,31 +16,29 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def display(array: np.ndarray, name: str):
+    """
+        Display array with name
+    """
+    plt.imshow(array)
+    plt.title(name)
+    plt.axis('off')
+    plt.show()
+
+
+
 array = ft_load("landscape.jpg")
 
-imageOriginal = Image.fromarray(array)
-
-ft_invert(array)
-
-
-imageRed = ft_red(array)
-print(imageRed)
-
+display(Image.fromarray(array), "Figure VIII.1: Original")
+display(ft_invert(array), "Figure VIII.2: Invert")
+display(ft_red(array), "Figure VIII.3: Red")
+display(ft_green(array), "Figure VIII.4: Green")
+display(ft_blue(array), "Figure VIII.5: Blue")
+display(ft_grey(array), "Figure VIII.6: Grey")
 
 
-
-ft_green(array)
-ft_blue(array)
-ft_grey(array)
 print(ft_invert.__doc__)
 
-plt.imshow(imageOriginal)
-plt.title("Figure VIII.1: Original")
-plt.axis('off')
-plt.show()
 
 
-plt.imshow(imageRed)
-plt.title("Figure VIII.3: Red")
-plt.axis('off')
-plt.show()
