@@ -11,14 +11,15 @@
 # ****************************************************************************#
 
 
-
 """
-https://pillow.readthedocs.io/en/latest/reference/Image.html#PIL.Image.Image.getbands
+https://pillow.readthedocs.io/en/latest/reference/Image.html#PIL.Image.\
+Image.getbands
 https://www.youtube.com/watch?v=pKFnUNY1TZ8
 
 """
 import numpy as np
 from PIL import Image
+
 
 def ft_invert(array: np.ndarray) -> np.ndarray:
     """
@@ -36,9 +37,9 @@ def ft_invert(array: np.ndarray) -> np.ndarray:
             G = 255 - G
             B = 255 - B
             imageArray.putpixel((X, Y), (R, G, B))
-
     return np.array(imageArray)
-    
+
+
 def ft_red(array: np.ndarray) -> np.ndarray:
     """
         Keeps only the red channel of the image.
@@ -59,6 +60,7 @@ def ft_red(array: np.ndarray) -> np.ndarray:
             imageArray.putpixel((X, Y), (R, 0, 0))
 
     return np.array(imageArray)
+
 
 def ft_green(array: np.ndarray) -> np.ndarray:
     """
@@ -109,22 +111,35 @@ def ft_grey(array: np.ndarray) -> np.ndarray:
         Converts the image to greyscale.
     """
 
-# ************  Firts solution *********************
-    imageGrey = Image.fromarray(array).convert("L")
-    imageGrey.show()
 
+# ************  First solution with + and / or // ***********
+    # y, x, color = array.shape
+    # # print(f"x : {x}  y : {y}  Color : {color}")
 
-# ************  Secound solution with + and / or // *********** 
-    y, x, color = array.shape
-    # print(f"x : {x}  y : {y}  Color : {color}")
+    # imageArray = Image.fromarray(array)
 
-    imageArray = Image.fromarray(array)
+    # for Y in range(y):
+    #     for X in range(x):
+    #         R, G, B = imageArray.getpixel((X, Y))
+    #         gray = int((R + G + B)/3)
+    #         # gray = (R + G + B)//3
+    #         imageArray.putpixel((X, Y), (gray, gray, gray))
 
-    for Y in range(y):
-        for X in range(x):
-            R, G, B = imageArray.getpixel((X, Y))
-            gray = int((R + G + B)/3)
-            # gray = (R + G + B)//3
-            imageArray.putpixel((X, Y), (gray, gray, gray))
+    # return np.array(imageArray)
 
-    return np.array(imageArray)
+# ************  Secound solution // perte de la troisieme dimension !!! *
+    # imageGrey = Image.fromarray(array).convert("L")
+    # imageGrey.show()
+    # imageGrey = np.array(imageGrey).astype(np.uint8)
+    # print(imageGrey.shape)
+    # return imageGrey
+
+# ************  Troisieme solution moyenne : mean ***********
+
+    # array (Y, X, 1)
+    grey_ar = np.mean(array, axis=2, keepdims=True)
+    # print(grey_array.shape)
+    # array (Y, X, 3)
+    grey_image = np.concatenate([grey_ar, grey_ar, grey_ar], axis=2)
+    # print(grey_image.shape)
+    return grey_image.astype(np.uint8)

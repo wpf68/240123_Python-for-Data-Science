@@ -27,7 +27,6 @@ def display(array: np.ndarray, name: str):
     plt.show()
 
 
-
 array = ft_load("landscape.jpg")
 
 display(Image.fromarray(array), "Figure VIII.1: Original")
@@ -35,10 +34,8 @@ display(ft_invert(array), "Figure VIII.2: Invert")
 display(ft_red(array), "Figure VIII.3: Red")
 display(ft_green(array), "Figure VIII.4: Green")
 display(ft_blue(array), "Figure VIII.5: Blue")
+# ft_grey(array)
 display(ft_grey(array), "Figure VIII.6: Grey")
 
 
 print(ft_invert.__doc__)
-
-
-
