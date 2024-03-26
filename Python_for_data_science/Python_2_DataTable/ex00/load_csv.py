@@ -11,6 +11,20 @@
 # ****************************************************************************#
 
 
+
+"""
+https://datascientest.com/pandas-python-data-science
+https://pandas.pydata.org/docs/
+http://www.python-simple.com/python-pandas/panda-intro.php
+
+https://ledatascientist.com/manipulez-vos-donnees-avec-pandas/
+
+
+
+"""
+
+
+
 """
 python3 -m venv env
 source env/bin/activate
@@ -20,6 +34,7 @@ or :
 pip install numpy
 pip install Pillow
 pip install matplotlib
+pip install pandas
 
     lire la doc :
     python3
@@ -32,6 +47,9 @@ pip install matplotlib
 Chemin pour flack8 :
 export PATH=$PATH:/home/pwolff/.local/bin
 """
+
+import numpy as np
+import pandas as pd
 
 
 # def load(path: str) -> Dataset: (You have to adapt the type of return according to your library)
