@@ -11,4 +11,29 @@
 # ****************************************************************************#
 
 from load_csv import load
-print(load("life_expectancy_years.csv"))
+import os
+
+os.system('clear')
+
+RED = "\033[1;31m"
+WHITE = "\033[1;37m"
+GREEN = "\033[1;32m"
+BLUE = "\033[1;34m"
+
+
+def tester():
+    """
+    Each program must have its main and not be a simple script
+    """
+
+    print(BLUE, load.__doc__, WHITE)
+    print(load("life_expectancy_years.csv"))
+    # load("life_expectancy_years.csv")
+
+    print(load("life_expectancy_yearsvis.csv"))
+
+    print(load("ImageNB.jpeg"))
+
+
+if __name__ == "__main__":
+    tester()
