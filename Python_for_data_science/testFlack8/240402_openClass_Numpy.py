@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/02 08:04:59 by pwolff            #+#    #+#              #
-#    Updated: 2024/04/02 09:19:23 by pwolff           ###   ########.fr        #
+#    Updated: 2024/04/05 07:35:28 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,9 +63,9 @@ emmanuel = [1300, 31, 2]
 tableau = [hugo, richard, emilie, pierre, paul, deborah,
            yohann, anne, thibault, emmanuel]
 
-print(tableau)
+print("tableau :\n", tableau)
 data = np.array(tableau)
-print(data)
+print("data :\n", data)
 
 valuePaul = data[4, :]
 print("Paul = ", valuePaul)

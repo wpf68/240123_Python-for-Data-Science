@@ -18,6 +18,9 @@ import numpy as np
 
 """
 https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science/7856527-tirez-un-maximum-de-ce-cours
+https://colab.research.google.com/drive/155rZhNOiLcv_jmtWiHzjrHR1vtye2TOJ
+
+
 
 """
 
@@ -37,7 +40,8 @@ def main(country = "France"):
     if len(sys.argv) > 1:
         country = sys.argv[1]
     print(country)
-    countriesData = load("life_expectancy_years.csv")
+    # countriesData = load("life_expectancy_years.csv")
+    countriesData = pd.read_csv("life_expectancy_years.csv")
     datas = countriesData[countriesData["country"].isin([country])]
     print(datas)
     # ts = pd.Series(datas)
@@ -51,7 +55,35 @@ def main(country = "France"):
     # plt.plot(datas)
     # plt.show()
 
-    print(datas['France'])
+    # print(datas['France'])
+
+
+
+    # ***********************************
+    #      Methode 1 pandas to numpy
+
+    print(datas.dtypes)
+    datasNumpy = datas.values
+    print(datasNumpy)
+    datasNumpy = datasNumpy[0:1, 1:]
+    print(datasNumpy)
+    datasNumpy = datasNumpy[0]
+    print(datasNumpy)
+
+    # plt.plot(datasNumpy)
+    # plt.show()
+
+    # ***********************************
+
+    print("\n\n")
+    header = list(countriesData)
+    print(header[1:])
+    # ts = pd.Series(np.random.randn(1000))
+    ts = pd.Series(datasNumpy, index=header[1:])
+    # ts = ts.cumsum()
+    ts.plot()
+    plt.show()
+    
 
 
 
