@@ -75,6 +75,10 @@ def main(country = "France"):
 
     # ***********************************
 
+
+    # ***********************************
+    #      Methode 2 recuperation du header de pandas
+
     print("\n\n")
     header = list(countriesData)
     print(header[1:])
