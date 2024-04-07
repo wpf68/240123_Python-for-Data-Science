@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/06 08:25:52 by pwolff            #+#    #+#              #
-#    Updated: 2024/04/07 11:19:50 by pwolff           ###   ########.fr        #
+#    Updated: 2024/04/07 14:52:43 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,5 +90,37 @@ print (clients_risque, "\nNbr de clients a risques : ", clients_risque.shape[0])
 clients_risque = prets[(prets['taux_endettement'] > 35) & (prets['ville'] == 'PARIS')]
 print (clients_risque, "\nNbr de clients a risques sur Paris : ", clients_risque.shape[0])
 
-risque = pd.Series("Non", index = [np.arange(prets.shape[0])])
-print(risque)
+clients_risque = prets.loc[(prets['taux_endettement'] > 35) & (prets['ville'] == 'PARIS'), :].shape[0]
+print (clients_risque, "\nNbr de clients a risques sur Paris : ", clients_risque)
+
+
+# risque = pd.Series("Non", index = [np.arange(prets.shape[0])])
+# print(risque, "\nShape risquw :")
+# # prets['risques'] = risque
+
+# # *************** Tous a NON *****************
+# prets['risques'] = risque[0]
+
+# print(prets)
+
+
+prets['risques'] = "Non"
+print(prets)
+
+
+prets.loc[prets['taux_endettement'] > 35, "risques"] = 'Oui'
+print(prets)
+print(prets[prets['risques'] == 'Oui'], "\nShape : ", prets[prets['risques'] == 'Oui'].shape)
+print(prets[prets['risques'] == 'Non'])
+
+print("\n****************************************************")
+print("****************************************************\n")
+
+totalAuto = prets[prets['type'] == 'automobile']
+print(totalAuto, "\nNbr de pret Auto : ", totalAuto.shape[0], "\nCout moyen : ", totalAuto['cout_total'].mean())
+
+print("\n****************************************************")
+print("****************************************************\n")
+
+totalBenefice = prets[prets['ville'] == 'TOULOUSE']
+print(totalBenefice, "\nBenefice Total : ", round((totalBenefice['benefices'].sum()), 2))
