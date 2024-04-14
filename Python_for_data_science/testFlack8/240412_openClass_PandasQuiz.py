@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 08:14:00 by pwolff            #+#    #+#              #
-#    Updated: 2024/04/12 09:25:35 by pwolff           ###   ########.fr        #
+#    Updated: 2024/04/14 10:38:19 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ print(notes_sup)
 notesTotal = pd.merge(notes, notes_sup, how="outer")
 print(notesTotal)
 
+notesTotal = pd.concat([notes, notes_sup])
+print(notesTotal)
+
 
 print("\n**************************************")
 print("********** Question 9 ***************")
@@ -64,11 +67,12 @@ print("\n**************************************\n")
 
 print(notesTotal)
 print(notesTotal.pivot_table(index='nom', columns='matiere', values='note'))
+# print(notes.groupby(['nom', 'matiere']).unique())
 print(notesTotal.melt(id_vars=['nom', 'matiere'], value_vars='note'))
 
 
 print("\n**************************************")
-print("********** Question 9 ***************")
+print("********** Question 10 ***************")
 print("\n**************************************\n")
 
 
@@ -77,8 +81,34 @@ produits = pd.read_csv('produits.csv')
 print(commande)
 print(produits)
 
-totalProduit = commande.merge(produits)
+totalProduit = pd.merge(produits, commande, on='id', how='inner')
+# totalProduit = commande.merge(produits)
 print(totalProduit)
-totalProduit = totalProduit.pivot_table(index='id')
+totalProduit['CA'] = totalProduit['prix'] * totalProduit['nombre']
+
 print(totalProduit)
+
+somme = totalProduit[['id','nombre', 'CA']].groupby('id').sum()
+# somme = totalProduit.groupby('id').sum()
+print(somme)
+
+
+
+
+
+# totalProduit = totalProduit.pivot_table(index='id')
+
+
+print(somme.sort_values('CA').head(1))
+print(somme.sort_values('nombre').tail(1))
+
+print((somme.sort_values('CA').head(1)))
+print((somme.sort_values('nombre').tail(1)))
+
+
+CApetir = ((somme.sort_values('CA').reset_index())[:1]['id'])
+CApetir = int(CApetir.iloc[0])
+
+print("CA le plus petit :", CApetir)
+print("Le plus vendu : ",int((somme.sort_values('nombre')).reset_index()[-1:]['id'].iloc[0]))
 
