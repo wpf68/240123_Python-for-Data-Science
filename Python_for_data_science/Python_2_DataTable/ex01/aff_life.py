@@ -20,6 +20,10 @@ import numpy as np
 https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science/7856527-tirez-un-maximum-de-ce-cours
 https://colab.research.google.com/drive/155rZhNOiLcv_jmtWiHzjrHR1vtye2TOJ
 
+https://openclassrooms.com/fr/courses/7771531-decouvrez-les-librairies-python-pour-la-data-science/7858285-tracez-des-graphiques-avec-matplotlib
+https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.scatter.html
+
+
 
 
 """
