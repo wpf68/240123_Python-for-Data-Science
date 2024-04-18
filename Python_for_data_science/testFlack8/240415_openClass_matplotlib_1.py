@@ -6,7 +6,7 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 08:00:01 by pwolff            #+#    #+#              #
-#    Updated: 2024/04/15 09:09:08 by pwolff           ###   ########.fr        #
+#    Updated: 2024/04/18 07:43:54 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,4 +66,7 @@ plt.show()
 agences = agences.sort_values('benefices')
 print(agences)
 plt.bar(height=agences['benefices'], x=agences['ville'])
+plt.show()
+
+plt.plot(height=agences['benefices'], x=agences['ville'])
 plt.show()
