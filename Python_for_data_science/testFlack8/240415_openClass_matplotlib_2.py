@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    240415_openClass_matplotlib_2.py                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
+#    By: pwolff <pwolff@student.42mulhouse.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/15 09:55:23 by pwolff            #+#    #+#              #
-#    Updated: 2024/04/18 08:07:21 by pwolff           ###   ########.fr        #
+#    Updated: 2024/04/20 17:43:15 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,10 +81,15 @@ print(CA.head())
 print(CA['date'])
 print(CA['immobilier'])
 
-date = CA['date'].to_list()
-immobilier = CA['immobilier'].to_list()
-automobile = CA['automobile'].to_list()
-consommation = CA['consommation'].to_list()
+# date = CA['date'].to_list()
+# immobilier = CA['immobilier'].to_list()
+# automobile = CA['automobile'].to_list()
+# consommation = CA['consommation'].to_list()
+
+date = CA['date']
+immobilier = CA['immobilier']
+automobile = CA['automobile']
+consommation = CA['consommation']
 
 
 plt.figure(figsize=(10, 7))
@@ -94,7 +99,8 @@ plt.plot(date, consommation, label='consommation', linewidth=3)
 plt.legend(loc='upper right')
 plt.ylabel('Benefice net (€)', fontsize=13)
 plt.yticks(fontsize=11)
-plt.title("Bénéfices mensuels nets sur l'année 2021, par type de prêt", fontsize=14)
+plt.title("***  PC **** Bénéfices mensuels nets sur l'année 2021, par type de prêt", fontsize=14)
+# plt.title("Bénéfices mensuels nets sur l'année 2021, par type de prêt", fontsize=14)
 plt.grid(color='gray', linestyle='-', linewidth=0.5)
 plt.show()
 
