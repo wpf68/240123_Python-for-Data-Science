@@ -84,7 +84,7 @@ def main():
     Each program must have its main and not be a simple script
     """
 
-    print("\033[1;34mYou want to go the .tester :)\033[1;37m")
+    print("\033[1;34mYou want to go the aff_life.py :)\033[1;37m")
 
 
 if __name__ == "__main__":

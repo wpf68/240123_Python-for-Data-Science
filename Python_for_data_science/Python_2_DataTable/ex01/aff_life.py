@@ -38,16 +38,23 @@ pip install matplotlib
 
 
 """
-
+RED = "\033[1;31m"
+WHITE = "\033[1;37m"
+GREEN = "\033[1;32m"
+BLUE = "\033[1;34m"
 
 def main(country = "France"):
     if len(sys.argv) > 1:
         country = sys.argv[1]
-    print(country)
+    
     # countriesData = load("life_expectancy_years.csv")
     countriesData = pd.read_csv("life_expectancy_years.csv")
+    print(GREEN, "liste des pays : ")
+    print(list(countriesData["country"]), "\n")
+
+    print(f"\n{BLUE} ********** {country} ************ ")
     datas = countriesData[countriesData["country"].isin([country])]
-    print(datas)
+    print(f"{datas}{WHITE}\n")
     # ts = pd.Series(datas)
 
 
@@ -67,12 +74,15 @@ def main(country = "France"):
     #      Methode 1 pandas to numpy
 
     print(datas.dtypes)
+
     datasNumpy = datas.values
-    print(datasNumpy)
+    print("\nvalues\n", datasNumpy)
+
     datasNumpy = datasNumpy[0:1, 1:]
-    print(datasNumpy)
+    print("\n[0:1, 1:]\n", datasNumpy)
+
     datasNumpy = datasNumpy[0]
-    print(datasNumpy)
+    print("\n[0]\n", datasNumpy)
 
     # plt.plot(datasNumpy)
     # plt.show()
@@ -83,11 +93,17 @@ def main(country = "France"):
     # ***********************************
     #      Methode 2 recuperation du header de pandas
 
-    print("\n\n")
+
     header = list(countriesData)
-    print(header[1:])
+    print("\nHeader :\n", header[1:])
     # ts = pd.Series(np.random.randn(1000))
     ts = pd.Series(datasNumpy, index=header[1:])
+
+
+    print("\n*****************************\n",datas)
+    print("\n*****************************\n",ts)
+    
+    # ts = pd.Series(datas)
     # ts = ts.cumsum()
     ts.plot()
     plt.show()
