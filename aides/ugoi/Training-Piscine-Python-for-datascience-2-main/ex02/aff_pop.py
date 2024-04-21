@@ -19,12 +19,12 @@ def plot_population_comparison(df):
         df[df['country'] == 'Switzerland'].iloc[:, 1:252].squeeze())
 
     plt.plot(
-        germany_data.index.astype(int),
+        germany_data.index.astype(int).to_list(),
         germany_data.values,
         label='Germany',
         color='blue')
     plt.plot(
-        switzerland_data.index.astype(int),
+        switzerland_data.index.astype(int).to_list(),
         switzerland_data.values,
         label='Switzerland',
         color='red')
