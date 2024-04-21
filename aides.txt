@@ -1,2 +1,6 @@
 https://github.com/zstenger93
 
+https://gvallverdu.gitbooks.io/python_sciences/content/
+https://courspython.com/bases-python.html
+https://phychim.ac-versailles.fr/IMG/pdf/tuto_python_matplotlib.pdf
+
