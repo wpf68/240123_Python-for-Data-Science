@@ -1,4 +1,7 @@
 https://github.com/zstenger93
+https://github.com/rertzer/piscinePython
+https://github.com/ugoi
+
 
 https://gvallverdu.gitbooks.io/python_sciences/content/
 https://courspython.com/bases-python.html

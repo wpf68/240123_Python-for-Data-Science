@@ -59,6 +59,7 @@ def load(path: str) -> pd.DataFrame:
     the data set and returns it. You have to handle the error cases and
     return None if the path is bad, bad format...
     """
+
     print(WHITE)
     try:
         df = pd.read_csv(path)

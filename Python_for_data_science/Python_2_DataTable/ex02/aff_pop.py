@@ -60,15 +60,17 @@ def main(country="Belgium"):
               : File DataBase no present\033[1;37m")
         exit()
 
-    datasFirstCountry = countriesData[countriesData["country"] == 'France'].iloc[:, 1:252].squeeze()
-    datasFirstCountry = datasFirstCountry.str.replace('M', 'e6').str.replace('k', 'e3').astype(float)
-
+    datasFirstCountry = countriesData[countriesData["country"] == 'France']\
+        .iloc[:, 1:252].squeeze()
+    datasFirstCountry = datasFirstCountry.str.replace('M', 'e6')\
+        .str.replace('k', 'e3').astype(float)
 
     print(f"\n{BLUE} ********** {country} ************ ")
     testCountry = True
     while testCountry:
         # base de donnees de 1800 a 2050 sur une colonne
-        datasSecoundCountry = countriesData[countriesData["country"].isin([country])]
+        datasSecoundCountry =\
+            countriesData[countriesData["country"].isin([country])]
         if datasSecoundCountry.shape[0] != 0:
             testCountry = False
         else:
@@ -79,14 +81,12 @@ def main(country="Belgium"):
                 print(f"{BLUE}BYE !!!!{WHITE}")
                 exit()
 
-    # base de donnees de 1800 a 2050 sur une colonne    
+    # base de donnees de 1800 a 2050 sur une colonne
     datasSecoundCountry = datasSecoundCountry.iloc[:, 1:252].squeeze()
     print(f"{datasSecoundCountry}{WHITE}\n")
-    datasSecoundCountry = datasSecoundCountry.str.replace('M', 'e6').str.replace('k', 'e3').astype(float)
-    print(f"{datasSecoundCountry}{WHITE}\n")
-
-
-
+    datasSecoundCountry = datasSecoundCountry.str.replace('M', 'e6')\
+        .str.replace('k', 'e3').astype(float)
+    print(f"{GREEN}{datasSecoundCountry}{WHITE}\n")
 
     # print(f"{datas2.ndim}{WHITE}\n")
     print(RED, "****************************************", WHITE)
@@ -98,19 +98,12 @@ def main(country="Belgium"):
         datasFirstCountry.values,
         label='France',
         color='green')
-    
+
     plt.plot(
         datasSecoundCountry.index.astype(int).to_list(),
         datasSecoundCountry.values,
         label=country,
         color='blue')
-    
-
-    # datasFirstCountry.plot()
-    # datasSecoundCountry.plot()
-    # plt.yticks(['100M', '200M', '300M'])
-
-    
 
     plt.title('Population Projections')
     plt.xlabel('Year')
@@ -121,44 +114,7 @@ def main(country="Belgium"):
     # plt.tight_layout()
     plt.show()
 
-    exit()
-
-
-
-    # ***********************************
-    #      M    # print(GREEN, "liste des pays : ")
-    # print(list(countriesData["country"]), "\n")
-    print(datas.dtypes)
-
-    datasNumpy = datas.values
-    print("\nvalues\n", datasNumpy)
-
-    datasNumpy = datasNumpy[0:1, 1:]
-    print("\n[0:1, 1:]\n", datasNumpy)
-
-    datasNumpy = datasNumpy[0]
-    # print("liste des pays : ")
-    # print(list(countriesData["country"]), "\n")ot(datasNumpy)
-    # plt.show()
-
-    # ***********************************
-    # ***********************************
-    #      Methode 2 recuperation du header de pandas
-    header = list(countriesData)
-    print("\nHeader :\n", header[1:])
-    # ts = pd.Series(np.random.randn(1000))
-    ts = pd.Series(datasNumpy, index=header[1:])
-    print("\n*********** datas ******************\n", datas)
-    print("\n*********** ts  ******************\n", ts)
-    plt.figure(figsize=(15, 10))
-    # https://webdi.fr/couleur-hexa.php
-    ts.plot(color='#005b9c', linewidth=2.5)
-    plt.xlabel('Year')
-    plt.ylabel('Life expectancy')
-    plt.title(country + ' Life expectancy Projections')
-    # plt.xlim("1800", "2100")
-    plt.show()
-
 
 if __name__ == "__main__":
+    print(GREEN, main.__doc__, WHITE)
     main()
