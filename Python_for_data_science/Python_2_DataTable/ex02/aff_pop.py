@@ -85,7 +85,7 @@ def main(country="Belgium"):
     datasSecoundCountry = datasSecoundCountry.iloc[:, 1:252].squeeze()
     print(f"{datasSecoundCountry}{WHITE}\n")
     datasSecoundCountry = datasSecoundCountry.str.replace('M', 'e6')\
-        .str.replace('k', 'e3').astype(float)
+        .str.replace('k', 'e3').str.replace('B', 'e9').astype(float)
     print(f"{GREEN}{datasSecoundCountry}{WHITE}\n")
 
     # print(f"{datas2.ndim}{WHITE}\n")
