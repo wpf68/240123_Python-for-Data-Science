@@ -23,6 +23,7 @@ class Character(ABC):
 
     @abstractmethod
     def die(self):
+        """Your docstring for Method"""
         pass
 
 
