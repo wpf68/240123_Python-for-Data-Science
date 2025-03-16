@@ -6,9 +6,12 @@
 #    By: pwolff <pwolff@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/10 08:28:22 by pwolff            #+#    #+#              #
-#    Updated: 2025/03/10 09:39:13 by pwolff           ###   ########.fr        #
+#    Updated: 2025/03/16 09:34:21 by pwolff           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
+# from math import sqrt
 
 def mean(args):
     """Calculation of the average"""
@@ -44,6 +47,10 @@ def quartile(args):
     return listQuartile
 
         
+def stdDeviation(args):
+    m = mean(args)
+    result = sqrt(sum([(x - m) ** 2 for x in args]) / len(args))
+    print('std :', result)
 
 
 def ft_statistics(*args, **kwargs) -> None:
@@ -52,10 +59,27 @@ def ft_statistics(*args, **kwargs) -> None:
         according to the **kwargs ask.
     You have to manage the errors."""
 
+    result = []
+    for key, value in kwargs.items():
+        # print ("dictionaire : ", key, " : ", value)
+        result.append(value)
+        
+    # print(result)
+        
+
+
     if quartile(args) != -1:
-        mean(args)
-        median(args)
-        print("quartile :",quartile(args))
+        if 'mean' in result:
+            mean(args)
+        if 'median' in result:
+            median(args)
+        if 'quartile' in result:
+            print("quartile :",quartile(args))
+
+
+    if 'std' in result and len(args) != 0:
+        stdDeviation(args)
+        print("std")
 
 def main():
     pass
